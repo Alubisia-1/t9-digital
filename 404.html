@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | T9 Digital</title>
+    <meta name="description" content="Sorry, the page you're looking for doesn't exist. Explore T9 Digital's services and get back on track.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://t9digital.com/">
+
+    <!-- Inline critical CSS for 404 page -->
+    <style>
+        :root {
+            --primary-500: #00d4ff;
+            --secondary-500: #39ff14;
+            --surface-color: #0a0a0a;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --fs-base: 1rem;
+            --fs-lg: 1.125rem;
+            --fs-xl: 1.25rem;
+            --fs-2xl: 1.5rem;
+            --fs-4xl: 2.25rem;
+            --fw-medium: 500;
+            --fw-bold: 700;
+            --radius-lg: 0.5rem;
+            --transition-base: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--surface-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            padding: var(--space-2xl);
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: var(--fw-bold);
+            background: linear-gradient(135deg, var(--primary-500), var(--secondary-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-lg);
+            line-height: 1;
+        }
+
+        .error-title {
+            font-size: var(--fs-4xl);
+            font-weight: var(--fw-bold);
+            margin-bottom: var(--space-lg);
+            color: var(--text-primary);
+        }
+
+        .error-description {
+            font-size: var(--fs-lg);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .error-actions {
+            display: flex;
+            gap: var(--space-lg);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-lg) var(--space-xl);
+            background: var(--primary-500);
+            color: var(--surface-color);
+            text-decoration: none;
+            border-radius: var(--radius-lg);
+            font-weight: var(--fw-medium);
+            transition: var(--transition-base);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--secondary-500);
+            transform: translateY(-2px);
+        }
+
+        .btn--secondary {
+            background: transparent;
+            color: var(--primary-500);
+            border: 2px solid var(--primary-500);
+        }
+
+        .btn--secondary:hover {
+            background: var(--primary-500);
+            color: var(--surface-color);
+        }
+
+        .helpful-links {
+            margin-top: var(--space-2xl);
+            padding-top: var(--space-xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .helpful-links h3 {
+            font-size: var(--fs-xl);
+            margin-bottom: var(--space-lg);
+            color: var(--text-primary);
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+            text-align: left;
+        }
+
+        .link-item {
+            padding: var(--space-lg);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition-base);
+        }
+
+        .link-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-500);
+        }
+
+        .link-item a {
+            color: var(--primary-500);
+            text-decoration: none;
+            font-weight: var(--fw-medium);
+        }
+
+        .link-item a:hover {
+            color: var(--secondary-500);
+        }
+
+        .link-item p {
+            color: var(--text-secondary);
+            font-size: var(--fs-sm);
+            margin-top: var(--space-sm);
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+
+            .error-title {
+                font-size: var(--fs-2xl);
+            }
+
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code" aria-hidden="true">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-description">
+            Oops! The page you're looking for seems to have wandered off into the digital void.
+            Don't worry, we'll help you get back on track.
+        </p>
+
+        <div class="error-actions">
+            <a href="/" class="btn" aria-label="Go to T9 Digital homepage">
+                <span>Go Home</span>
+            </a>
+            <button onclick="history.back()" class="btn btn--secondary" aria-label="Go back to previous page">
+                <span>Go Back</span>
+            </button>
+        </div>
+
+        <div class="helpful-links">
+            <h3>Helpful Links</h3>
+            <div class="links-grid">
+                <div class="link-item">
+                    <a href="/#services">Our Services</a>
+                    <p>Discover our digital marketing solutions</p>
+                </div>
+                <div class="link-item">
+                    <a href="/#portfolio">Portfolio</a>
+                    <p>View our latest work and case studies</p>
+                </div>
+                <div class="link-item">
+                    <a href="/#about">About Us</a>
+                    <p>Learn about our team and expertise</p>
+                </div>
+                <div class="link-item">
+                    <a href="/#contact">Contact</a>
+                    <p>Get in touch for a free consultation</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analytics tracking for 404 errors -->
+    <script>
+        // Track 404 errors
+        if (typeof gtag === 'function') {
+            gtag('event', 'page_view', {
+                page_title: '404 - Page Not Found',
+                page_location: window.location.href,
+                custom_parameter: '404_error'
+            });
+        }
+
+        // Alternative tracking if gtag is not available
+        if (typeof dataLayer !== 'undefined') {
+            dataLayer.push({
+                event: '404_error',
+                page_path: window.location.pathname,
+                page_title: '404 - Page Not Found'
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-09-24T06:38:13.624Z",
+  "version": "1758695893370",
+  "environment": "production",
+  "files": {
+    "index.html": 84524,
+    "styles.min.css": 125568,
+    "script.min.js": 110532
+  },
+  "optimizations": {
+    "minified": true,
+    "versioning": true,
+    "caching": true
+  }
+}
