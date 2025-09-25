@@ -1365,110 +1365,8 @@ const debounce = (func, wait) => {
   };
 };
 
-// ===== LOADING ANIMATION =====
-const initLoadingAnimation = () => {
-  // Add loading class to body
-  document.body.classList.add('loading');
-
-  // Create loading screen
-  const loader = document.createElement('div');
-  loader.className = 'loader';
-  loader.innerHTML = `
-    <div class="loader__content">
-      <div class="loader__logo">T9 Digital</div>
-      <div class="loader__bar">
-        <div class="loader__progress"></div>
-      </div>
-    </div>
-  `;
-
-  // Add loader styles
-  const loaderStyles = `
-    .loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #0a0a0a;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10000;
-      transition: opacity 0.5s ease;
-    }
-    .loader__content {
-      text-align: center;
-    }
-    .loader__logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #00d4ff, #39ff14);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 2rem;
-    }
-    .loader__bar {
-      width: 200px;
-      height: 4px;
-      background: #333;
-      border-radius: 2px;
-      overflow: hidden;
-    }
-    .loader__progress {
-      width: 0%;
-      height: 100%;
-      background: linear-gradient(135deg, #00d4ff, #39ff14);
-      border-radius: 2px;
-      transition: width 0.3s ease;
-    }
-    body.loading {
-      overflow: hidden;
-    }
-  `;
-
-  const style = document.createElement('style');
-  style.textContent = loaderStyles;
-  document.head.appendChild(style);
-
-  document.body.appendChild(loader);
-
-  // Animate progress bar
-  const progress = loader.querySelector('.loader__progress');
-  let width = 0;
-
-  const updateProgress = () => {
-    width += Math.random() * 10;
-    if (width > 100) width = 100;
-
-    progress.style.width = width + '%';
-
-    if (width < 100) {
-      setTimeout(updateProgress, 100);
-    } else {
-      // Remove loader after loading is complete
-      setTimeout(() => {
-        loader.style.opacity = '0';
-        document.body.classList.remove('loading');
-        setTimeout(() => {
-          if (loader.parentNode) {
-            loader.parentNode.removeChild(loader);
-          }
-        }, 500);
-      }, 300);
-    }
-  };
-
-  updateProgress();
-};
-
 // ===== INITIALIZE ALL FUNCTIONALITY =====
 const init = () => {
-  // Initialize loading animation first
-  initLoadingAnimation();
-
   // Wait for DOM to be fully loaded
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
@@ -1549,7 +1447,6 @@ const initAdvancedBackgroundEffects = () => {
   initEnhancedCursorTrail();
   initHoverMagnetism();
   initPageTransitions();
-  initEnhancedLoadingScreen();
   initPerformanceControls();
 };
 
@@ -2003,55 +1900,6 @@ const initPageTransitions = () => {
   });
 };
 
-// ===== ENHANCED LOADING SCREEN =====
-const initEnhancedLoadingScreen = () => {
-  // Create loading screen
-  const loadingScreen = document.createElement('div');
-  loadingScreen.className = 'loading-screen';
-
-  const loadingAnimation = document.createElement('div');
-  loadingAnimation.className = 'loading-animation';
-
-  const loadingLogo = document.createElement('div');
-  loadingLogo.className = 'loading-logo';
-  loadingLogo.textContent = 'T9';
-
-  const loadingProgress = document.createElement('div');
-  loadingProgress.className = 'loading-progress';
-
-  const loadingBar = document.createElement('div');
-  loadingBar.className = 'loading-bar';
-  loadingProgress.appendChild(loadingBar);
-
-  // Loading particles
-  const loadingParticles = document.createElement('div');
-  loadingParticles.className = 'loading-particles';
-
-  for (let i = 0; i < 8; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'loading-particle';
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.top = Math.random() * 100 + '%';
-    particle.style.animationDelay = Math.random() * 3 + 's';
-    loadingParticles.appendChild(particle);
-  }
-
-  loadingAnimation.appendChild(loadingLogo);
-  loadingAnimation.appendChild(loadingProgress);
-  loadingScreen.appendChild(loadingAnimation);
-  loadingScreen.appendChild(loadingParticles);
-
-  document.body.appendChild(loadingScreen);
-
-  // Simulate loading progress
-  setTimeout(() => {
-    loadingScreen.classList.add('fade-out');
-
-    setTimeout(() => {
-      loadingScreen.remove();
-    }, 500);
-  }, 2500);
-};
 
 // ===== PERFORMANCE CONTROLS =====
 const initPerformanceControls = () => {

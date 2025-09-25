@@ -2341,108 +2341,6 @@ img, picture, svg {
   z-index: 2;
 }
 
-/* Enhanced Loading Animation */
-.loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: var(--surface-base);
-  z-index: 10000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
-  transition: opacity 0.5s ease;
-}
-
-.loading-screen.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.loading-animation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-xl);
-}
-
-.loading-logo {
-  font-size: var(--fs-3xl);
-  font-weight: var(--fw-bold);
-  background: var(--gradient-primary);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: logoGlow 2s ease-in-out infinite alternate;
-}
-
-@keyframes logoGlow {
-  0% {
-    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
-  }
-  100% {
-    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.8));
-  }
-}
-
-.loading-progress {
-  width: 200px;
-  height: 4px;
-  background: var(--surface-elevated);
-  border-radius: var(--radius-full);
-  overflow: hidden;
-}
-
-.loading-bar {
-  height: 100%;
-  background: var(--gradient-primary);
-  border-radius: var(--radius-full);
-  transform: translateX(-100%);
-  animation: loadingProgress 2s ease-in-out forwards;
-}
-
-@keyframes loadingProgress {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.loading-particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-.loading-particle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: var(--primary-500);
-  border-radius: 50%;
-  animation: loadingParticleFloat 3s ease-in-out infinite;
-  opacity: 0;
-}
-
-@keyframes loadingParticleFloat {
-  0%, 100% {
-    opacity: 0;
-    transform: translateY(20px) scale(0);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-20px) scale(1);
-  }
-}
-
 /* Page Transition Effects */
 .page-transition {
   position: fixed;
@@ -4984,105 +4882,6 @@ img, picture, svg {
   50% { opacity: 0.8; }
 }
 
-/* Enhanced Loading Screen */
-.loading-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--bg-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10000;
-  transition: opacity 0.5s ease;
-}
-
-.loading-screen.fade-out {
-  opacity: 0;
-}
-
-.loading-animation {
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.loading-logo {
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 900;
-  background: var(--gradient-primary);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 2rem;
-  animation: logoGlow 2s ease-in-out infinite alternate;
-}
-
-@keyframes logoGlow {
-  0% { filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3)); }
-  100% { filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.8)); }
-}
-
-.loading-progress {
-  width: 300px;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
-  overflow: hidden;
-  position: relative;
-}
-
-.loading-bar {
-  height: 100%;
-  background: var(--gradient-primary);
-  border-radius: 3px;
-  width: 100%;
-  animation: loadingBar 2s ease-out forwards;
-}
-
-@keyframes loadingBar {
-  0% { width: 0%; }
-  100% { width: 100%; }
-}
-
-.loading-particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
-
-.loading-particle {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: var(--primary-400);
-  border-radius: 50%;
-  animation: particleFloat 3s linear infinite;
-}
-
-@keyframes particleFloat {
-  0% {
-    transform: translateY(100vh) scale(0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100px) scale(1);
-    opacity: 0;
-  }
-}
-
 /* Animation Classes */
 .animate {
   opacity: 0;
@@ -5187,13 +4986,6 @@ img, picture, svg {
     padding: 2px 8px;
   }
 
-  .loading-logo {
-    font-size: 2rem;
-  }
-
-  .loading-progress {
-    width: 250px;
-  }
 }
 
 /* Performance and Accessibility */
@@ -5206,8 +4998,7 @@ img, picture, svg {
 
   .particle-canvas,
   .gradient-background,
-  .geometric-patterns,
-  .loading-particles {
+  .geometric-patterns {
     display: none !important;
   }
 }
