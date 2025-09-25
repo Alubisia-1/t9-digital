@@ -5,59 +5,6 @@ const $$ = (selector) => document.querySelectorAll(selector);
 // ===== ADVANCED FEATURES & EASTER EGGS =====
 let konamiSequence = [];
 const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'KeyB', 'KeyA'];
-let isDarkMode = localStorage.getItem('darkMode') === 'true';
-
-// ===== DARK/LIGHT MODE TOGGLE =====
-const initThemeToggle = () => {
-  // Create theme toggle button
-  const themeToggle = document.createElement('button');
-  themeToggle.className = 'theme-toggle';
-  themeToggle.setAttribute('aria-label', 'Toggle dark/light mode');
-  themeToggle.innerHTML = `
-    <div class="theme-toggle__track">
-      <div class="theme-toggle__thumb">
-        <svg class="theme-toggle__icon theme-toggle__sun" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="4"></circle>
-          <path d="m12 2v2"></path>
-          <path d="m12 20v2"></path>
-          <path d="m4.93 4.93l1.41 1.41"></path>
-          <path d="m17.66 17.66l1.41 1.41"></path>
-          <path d="m2 12h2"></path>
-          <path d="m20 12h2"></path>
-          <path d="m6.34 17.66-1.41 1.41"></path>
-          <path d="m19.07 4.93-1.41 1.41"></path>
-        </svg>
-        <svg class="theme-toggle__icon theme-toggle__moon" viewBox="0 0 24 24" fill="none">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      </div>
-    </div>
-  `;
-
-  document.body.appendChild(themeToggle);
-
-  // Apply saved theme
-  if (isDarkMode) {
-    document.documentElement.classList.add('light-mode');
-    themeToggle.classList.add('active');
-  }
-
-  themeToggle.addEventListener('click', () => {
-    isDarkMode = !isDarkMode;
-    document.documentElement.classList.toggle('light-mode', isDarkMode);
-    themeToggle.classList.toggle('active', isDarkMode);
-    localStorage.setItem('darkMode', isDarkMode);
-
-    // Smooth transition effect
-    document.body.style.transition = 'background-color 0.3s ease';
-    setTimeout(() => {
-      document.body.style.transition = '';
-    }, 300);
-
-    // Trigger theme change event
-    window.dispatchEvent(new CustomEvent('themeChange', { detail: { isDarkMode } }));
-  });
-};
 
 // ===== EASTER EGGS =====
 const initEasterEggs = () => {
@@ -366,86 +313,6 @@ const initMicroInteractions = () => {
   });
 };
 
-// ===== SOUND EFFECTS =====
-const initSoundEffects = () => {
-  // Only add sounds if user hasn't opted out
-  const soundsEnabled = localStorage.getItem('soundsEnabled') !== 'false';
-  if (!soundsEnabled) return;
-
-  // Create audio context for Web Audio API
-  let audioContext;
-
-  try {
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
-  } catch (e) {
-    console.log('Web Audio API not supported');
-    return;
-  }
-
-  // Sound generation functions
-  const playClickSound = () => {
-    if (!audioContext) return;
-
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
-
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
-
-    oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
-    oscillator.frequency.exponentialRampToValueAtTime(600, audioContext.currentTime + 0.1);
-
-    gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
-
-    oscillator.start(audioContext.currentTime);
-    oscillator.stop(audioContext.currentTime + 0.1);
-  };
-
-  const playHoverSound = () => {
-    if (!audioContext) return;
-
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
-
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
-
-    oscillator.frequency.setValueAtTime(1200, audioContext.currentTime);
-
-    gainNode.gain.setValueAtTime(0.05, audioContext.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.05);
-
-    oscillator.start(audioContext.currentTime);
-    oscillator.stop(audioContext.currentTime + 0.05);
-  };
-
-  // Add sound effects to interactive elements
-  $$('button, .btn, .nav__link').forEach(el => {
-    el.addEventListener('click', playClickSound);
-    el.addEventListener('mouseenter', playHoverSound);
-  });
-
-  // Sound toggle button
-  const soundToggle = document.createElement('button');
-  soundToggle.className = 'sound-toggle';
-  soundToggle.setAttribute('aria-label', 'Toggle sound effects');
-  soundToggle.innerHTML = soundsEnabled ? '🔊' : '🔇';
-  document.body.appendChild(soundToggle);
-
-  soundToggle.addEventListener('click', () => {
-    const currentlyEnabled = localStorage.getItem('soundsEnabled') !== 'false';
-    const newState = !currentlyEnabled;
-    localStorage.setItem('soundsEnabled', newState);
-    soundToggle.innerHTML = newState ? '🔊' : '🔇';
-
-    if (!newState && audioContext) {
-      audioContext.close();
-    }
-
-    showNotification(`Sound effects ${newState ? 'enabled' : 'disabled'}`, 'info');
-  });
-};
 
 // ===== BROWSER COMPATIBILITY =====
 const initBrowserCompatibility = () => {
@@ -1622,14 +1489,12 @@ const initializeFeatures = () => {
   initFormHandling();
 
   // Advanced features
-  initThemeToggle();
   initEasterEggs();
   initCustomCursor();
   initScrollProgress();
   initReadingTimeEstimates();
   initPageTransitions();
   initMicroInteractions();
-  initSoundEffects();
   initBrowserCompatibility();
   initQualityAssurance();
 

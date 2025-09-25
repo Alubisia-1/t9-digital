@@ -36,8 +36,8 @@
     <meta name="twitter:site" content="@t9digital">
 
     <!-- Additional Meta Tags -->
-    <meta name="theme-color" content="#00d4ff">
-    <meta name="msapplication-TileColor" content="#00d4ff">
+    <meta name="theme-color" content="#f48fb1">
+    <meta name="msapplication-TileColor" content="#f48fb1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="T9 Digital">
@@ -56,12 +56,35 @@
     <style>
         /* Critical path CSS for above-the-fold content */
         :root {
-            --primary-500: #00d4ff;
-            --secondary-500: #39ff14;
-            --surface-color: #0a0a0a;
-            --surface-elevated: #2a2a2a;
-            --text-primary: #ffffff;
-            --text-secondary: #b3b3b3;
+            /* Warm Rose Pink Color Scheme */
+            --primary-rose: #f48fb1;
+            --primary-rose-dark: #ec407a;
+            --warm-taupe: #8d6e63;
+            --dusty-rose: #bcaaa4;
+            --soft-beige: #d7ccc8;
+            --warm-white: #f5f5f5;
+            --sage-green: #81c784;
+            --warm-gold: #ffb74d;
+            --pure-white: #ffffff;
+            --charcoal-gray: #424242;
+            --medium-gray: #757575;
+            --light-gray: #e0e0e0;
+
+            /* Beautiful Rose Pink Gradients */
+            --gradient-primary: linear-gradient(135deg, #f48fb1 0%, #ec407a 100%);
+            --gradient-secondary: linear-gradient(135deg, #f48fb1 0%, #8d6e63 100%);
+            --gradient-accent: linear-gradient(135deg, #81c784 0%, #ffb74d 100%);
+            --gradient-text: linear-gradient(135deg, #f48fb1, #8d6e63);
+
+            /* Legacy support - map old variables to new rose theme */
+            --primary-500: var(--primary-rose);
+            --secondary-500: var(--warm-taupe);
+            --surface-color: var(--warm-white);
+            --surface-elevated: var(--pure-white);
+            --text-primary: var(--charcoal-gray);
+            --text-secondary: var(--medium-gray);
+
+            /* Spacing and typography */
             --space-lg: 1.5rem;
             --space-xl: 2rem;
             --space-2xl: 3rem;
@@ -80,8 +103,8 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--surface-color);
-            color: var(--text-primary);
+            background: var(--warm-white);
+            color: var(--charcoal-gray);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -359,9 +382,7 @@
                     </div>
 
                     <p class="hero__description">
-                        We combine cutting-edge AI technology with human creativity to deliver marketing campaigns
-                        that don't just capture attention—they drive measurable results. From brand strategy to
-                        conversion optimization, we're your full-stack digital marketing partner.
+                        We combine AI technology with human creativity to deliver campaigns that drive results. Your full-stack digital marketing partner.
                     </p>
 
                     <div class="hero__buttons">
@@ -449,8 +470,7 @@
                         <div class="service__content">
                             <h3 class="service__title">Marketing Automations</h3>
                             <p class="service__description">
-                                Intelligent workflows that convert while you sleep. Our automation systems nurture
-                                leads, segment audiences, and optimize campaigns 24/7.
+                                Intelligent workflows that convert 24/7. Nurture leads and optimize campaigns automatically.
                             </p>
 
                             <ul class="service__features">
@@ -515,8 +535,7 @@
                         <div class="service__content">
                             <h3 class="service__title">AI-Powered Creative Studio</h3>
                             <p class="service__description">
-                                Human creativity amplified by artificial intelligence. We blend cutting-edge AI
-                                tools with strategic thinking to produce extraordinary creative work.
+                                Human creativity meets AI intelligence. Strategic thinking with extraordinary results.
                             </p>
 
                             <ul class="service__features">
@@ -581,8 +600,7 @@
                         <div class="service__content">
                             <h3 class="service__title">Data-Driven Campaigns</h3>
                             <p class="service__description">
-                                Every decision backed by intelligence, optimized for success. We turn data into
-                                actionable insights that drive measurable growth.
+                                Data-driven decisions that optimize for success. Insights that drive measurable growth.
                             </p>
 
                             <ul class="service__features">
@@ -615,7 +633,7 @@
             <div class="container">
                 <div class="section__header fade-in-up">
                     <h2 class="section__title text-reveal">About Our Agency</h2>
-                    <p class="section__subtitle fade-in-up stagger-1">We bridge creative vision with marketing science to deliver measurable results</p>
+                    <p class="section__subtitle fade-in-up stagger-1">Creative vision meets marketing science</p>
                 </div>
 
                 <div class="about__content">
@@ -624,10 +642,10 @@
                         <div class="about__mission-content">
                             <h3 class="about__mission-title">Our Mission</h3>
                             <p class="about__mission-text">
-                                At T9 Digital, we don't just create campaigns—we craft digital experiences that transform brands and drive meaningful growth. Our approach combines data-driven insights with creative excellence to deliver results that exceed expectations.
+                                We craft digital experiences that transform brands and drive growth.
                             </p>
                             <p class="about__mission-text">
-                                Every project is an opportunity to push boundaries, challenge conventions, and create something truly exceptional that resonates with your audience and drives your business forward.
+                                Every project pushes boundaries and creates exceptional results.
                             </p>
                         </div>
                         <div class="about__mission-visual">
@@ -656,7 +674,7 @@
                                     <span class="counter" data-count="200">0</span><span class="about__stat-symbol">+</span>
                                 </div>
                                 <div class="about__stat-label">Projects Completed</div>
-                                <div class="about__stat-description">Successful campaigns delivered across diverse industries</div>
+                                <div class="about__stat-description">Successful campaigns delivered</div>
                             </div>
 
                             <div class="about__stat scale-in stagger-2">
@@ -664,7 +682,7 @@
                                     <span class="counter" data-count="50">0</span><span class="about__stat-symbol">+</span>
                                 </div>
                                 <div class="about__stat-label">Happy Clients</div>
-                                <div class="about__stat-description">Long-term partnerships built on trust and results</div>
+                                <div class="about__stat-description">Long-term partnerships</div>
                             </div>
 
                             <div class="about__stat scale-in stagger-3">
@@ -672,7 +690,7 @@
                                     <span class="counter" data-count="5">0</span><span class="about__stat-symbol">+</span>
                                 </div>
                                 <div class="about__stat-label">Years Experience</div>
-                                <div class="about__stat-description">Deep expertise in digital marketing evolution</div>
+                                <div class="about__stat-description">Digital marketing expertise</div>
                             </div>
 
                             <div class="about__stat scale-in stagger-4">
@@ -680,7 +698,7 @@
                                     <span class="counter" data-count="98">0</span><span class="about__stat-symbol">%</span>
                                 </div>
                                 <div class="about__stat-label">Client Satisfaction</div>
-                                <div class="about__stat-description">Consistent delivery of exceptional results</div>
+                                <div class="about__stat-description">Exceptional results delivered</div>
                             </div>
                         </div>
                     </div>
@@ -698,7 +716,7 @@
                                 </div>
                                 <div class="about__value-content">
                                     <h4 class="about__value-title">Results-Driven</h4>
-                                    <p class="about__value-description">Every strategy is built around measurable outcomes and ROI optimization.</p>
+                                    <p class="about__value-description">Measurable outcomes and ROI optimization.</p>
                                 </div>
                             </div>
 
@@ -711,7 +729,7 @@
                                 </div>
                                 <div class="about__value-content">
                                     <h4 class="about__value-title">Innovation First</h4>
-                                    <p class="about__value-description">We leverage cutting-edge technologies to stay ahead of market trends.</p>
+                                    <p class="about__value-description">Cutting-edge technologies for market leadership.</p>
                                 </div>
                             </div>
 
@@ -724,7 +742,7 @@
                                 </div>
                                 <div class="about__value-content">
                                     <h4 class="about__value-title">Client Partnership</h4>
-                                    <p class="about__value-description">We work as an extension of your team, invested in your long-term success.</p>
+                                    <p class="about__value-description">Extension of your team, invested in success.</p>
                                 </div>
                             </div>
                         </div>
@@ -779,7 +797,7 @@
                     <!-- Call to Action -->
                     <div class="about__cta fade-in-up stagger-6">
                         <h3 class="about__cta-title">Ready to Transform Your Digital Presence?</h3>
-                        <p class="about__cta-text">Let's discuss how we can help accelerate your growth with data-driven marketing strategies.</p>
+                        <p class="about__cta-text">Let's accelerate your growth with data-driven strategies.</p>
                         <div class="about__cta-buttons">
                             <a href="#contact" class="btn btn--primary hover-lift">Start Your Project</a>
                             <a href="#portfolio" class="btn btn--secondary hover-lift">View Our Work</a>
@@ -794,7 +812,7 @@
             <div class="container">
                 <div class="section__header fade-in-up">
                     <h2 class="section__title text-reveal">Portfolio Showcase</h2>
-                    <p class="section__subtitle fade-in-up stagger-1">Transformative results across diverse industries</p>
+                    <p class="section__subtitle fade-in-up stagger-1">Results across diverse industries</p>
                 </div>
 
                 <!-- Filter Buttons -->
@@ -864,7 +882,7 @@
 
                             <h3 class="portfolio__title">TechVision Identity Redesign</h3>
                             <p class="portfolio__description">
-                                Complete brand transformation from outdated corporate look to modern, tech-forward identity that resonates with millennial audience.
+                                Brand transformation to modern, tech-forward identity.
                             </p>
 
                             <div class="portfolio__metrics">
@@ -917,7 +935,7 @@
 
                             <h3 class="portfolio__title">AI-Driven Email Automation</h3>
                             <p class="portfolio__description">
-                                Sophisticated email automation sequence with behavioral triggers and AI-powered personalization that transformed lead nurturing.
+                                Email automation with AI personalization for lead nurturing.
                             </p>
 
                             <div class="portfolio__metrics">
@@ -976,7 +994,7 @@
 
                             <h3 class="portfolio__title">AI Creative Content Series</h3>
                             <p class="portfolio__description">
-                                Revolutionary AI-generated social media campaign with consistent brand voice and stunning visual cohesion across all platforms.
+                                AI-generated social media with consistent brand voice.
                             </p>
 
                             <div class="portfolio__metrics">
@@ -1039,7 +1057,7 @@
 
                             <h3 class="portfolio__title">E-commerce Platform Redesign</h3>
                             <p class="portfolio__description">
-                                Complete UX overhaul with conversion optimization, mobile-first design, and performance enhancements that revolutionized user experience.
+                                UX overhaul with mobile-first design and performance optimization.
                             </p>
 
                             <div class="portfolio__metrics">
@@ -1098,7 +1116,7 @@
 
                             <h3 class="portfolio__title">Multi-Channel Lead Campaign</h3>
                             <p class="portfolio__description">
-                                Integrated lead generation strategy combining PPC, content marketing, and social advertising with advanced attribution tracking.
+                                Multi-channel lead generation with PPC, content, and social advertising.
                             </p>
 
                             <div class="portfolio__metrics">
@@ -1165,7 +1183,7 @@
 
                             <h3 class="portfolio__title">Viral Brand Awareness Campaign</h3>
                             <p class="portfolio__description">
-                                Award-winning integrated campaign combining storytelling, influencer partnerships, and user-generated content for maximum brand impact.
+                                Award-winning campaign with storytelling and influencer partnerships.
                             </p>
 
                             <div class="portfolio__metrics">
@@ -1261,14 +1279,12 @@
                 <div class="about__mission">
                     <div class="section__header fade-in-up">
                         <h2 class="section__title text-reveal">Bridging Creativity & Conversion</h2>
-                        <p class="section__subtitle fade-in-up stagger-1">Where visionary design meets measurable results</p>
+                        <p class="section__subtitle fade-in-up stagger-1">Visionary design meets measurable results</p>
                     </div>
 
                     <div class="about__mission-content fade-in-up stagger-2">
                         <p class="about__mission-text">
-                            At T9 Digital, we don't just create beautiful campaigns—we engineer experiences that transform prospects into customers.
-                            Our data-driven approach ensures every creative decision is backed by performance insights, delivering marketing
-                            that looks stunning and drives real business growth.
+                            We engineer experiences that transform prospects into customers with data-driven creativity.
                         </p>
                     </div>
                 </div>
@@ -1337,7 +1353,7 @@
                 <div class="about__values">
                     <div class="section__header fade-in-up">
                         <h3 class="about__values-title">Our Core Values</h3>
-                        <p class="about__values-subtitle">The principles that drive everything we do</p>
+                        <p class="about__values-subtitle">Principles that drive everything we do</p>
                     </div>
 
                     <div class="about__values-grid">
@@ -1356,8 +1372,7 @@
                             <div class="about__value-content">
                                 <h4 class="about__value-title">Innovation</h4>
                                 <p class="about__value-description">
-                                    We push creative boundaries, embracing cutting-edge technology and fresh perspectives
-                                    to deliver breakthrough marketing solutions.
+                                    Cutting-edge technology and fresh perspectives for breakthrough solutions.
                                 </p>
                             </div>
                         </div>
@@ -1376,8 +1391,7 @@
                             <div class="about__value-content">
                                 <h4 class="about__value-title">Results</h4>
                                 <p class="about__value-description">
-                                    Every strategy is built around measurable outcomes. We're obsessed with ROI and
-                                    committed to delivering campaigns that move the needle.
+                                    Obsessed with ROI and delivering campaigns that move the needle.
                                 </p>
                             </div>
                         </div>
@@ -1397,8 +1411,7 @@
                             <div class="about__value-content">
                                 <h4 class="about__value-title">Partnership</h4>
                                 <p class="about__value-description">
-                                    We're not just vendors—we're strategic partners invested in your success.
-                                    Your growth is our growth.
+                                    Strategic partners invested in your success.
                                 </p>
                             </div>
                         </div>
@@ -1417,8 +1430,7 @@
                             <div class="about__value-content">
                                 <h4 class="about__value-title">Excellence</h4>
                                 <p class="about__value-description">
-                                    We maintain the highest standards in everything we do, from initial strategy
-                                    to final execution and ongoing optimization.
+                                    Highest standards from strategy to execution.
                                 </p>
                             </div>
                         </div>
@@ -1430,7 +1442,7 @@
                     <div class="about__expertise-content">
                         <div class="section__header fade-in-up">
                             <h3 class="about__expertise-title">Our Expertise</h3>
-                            <p class="about__expertise-subtitle">Mastery across the digital marketing spectrum</p>
+                            <p class="about__expertise-subtitle">Mastery across digital marketing</p>
                         </div>
 
                         <div class="about__skills">
@@ -1489,7 +1501,7 @@
                 <div class="about__timeline">
                     <div class="section__header fade-in-up">
                         <h3 class="about__timeline-title">Our Journey</h3>
-                        <p class="about__timeline-subtitle">Key milestones in our growth story</p>
+                        <p class="about__timeline-subtitle">Key milestones in our growth</p>
                     </div>
 
                     <div class="about__timeline-container">
@@ -1499,7 +1511,7 @@
                             <div class="about__timeline-date">2020</div>
                             <div class="about__timeline-content">
                                 <h4 class="about__timeline-event">Company Founded</h4>
-                                <p class="about__timeline-description">T9 Digital was born with a vision to bridge creativity and conversion in digital marketing.</p>
+                                <p class="about__timeline-description">Founded with a vision to bridge creativity and conversion.</p>
                             </div>
                         </div>
 
@@ -1507,7 +1519,7 @@
                             <div class="about__timeline-date">2021</div>
                             <div class="about__timeline-content">
                                 <h4 class="about__timeline-event">First Major Client Win</h4>
-                                <p class="about__timeline-description">Secured our first enterprise client, delivering a 300% ROI increase within 6 months.</p>
+                                <p class="about__timeline-description">First enterprise client with 300% ROI increase.</p>
                             </div>
                         </div>
 
@@ -1515,7 +1527,7 @@
                             <div class="about__timeline-date">2022</div>
                             <div class="about__timeline-content">
                                 <h4 class="about__timeline-event">Team Expansion</h4>
-                                <p class="about__timeline-description">Grew to a team of 12 specialists covering all aspects of digital marketing and design.</p>
+                                <p class="about__timeline-description">Grew to 12 specialists across digital marketing and design.</p>
                             </div>
                         </div>
 
@@ -1523,7 +1535,7 @@
                             <div class="about__timeline-date">2023</div>
                             <div class="about__timeline-content">
                                 <h4 class="about__timeline-event">Industry Recognition</h4>
-                                <p class="about__timeline-description">Received "Agency of the Year" award for innovative campaign strategies and client results.</p>
+                                <p class="about__timeline-description">"Agency of the Year" for innovative strategies and results.</p>
                             </div>
                         </div>
 
@@ -1531,7 +1543,7 @@
                             <div class="about__timeline-date">2024</div>
                             <div class="about__timeline-content">
                                 <h4 class="about__timeline-event">AI Integration</h4>
-                                <p class="about__timeline-description">Pioneered AI-powered creative tools, reducing campaign development time by 40%.</p>
+                                <p class="about__timeline-description">AI-powered creative tools reducing development time 40%.</p>
                             </div>
                         </div>
                     </div>
@@ -1541,7 +1553,7 @@
                 <div class="about__recognition">
                     <div class="section__header fade-in-up">
                         <h3 class="about__recognition-title">Recognition & Awards</h3>
-                        <p class="about__recognition-subtitle">Industry validation of our commitment to excellence</p>
+                        <p class="about__recognition-subtitle">Industry validation of our excellence</p>
                     </div>
 
                     <div class="about__awards">
@@ -1608,51 +1620,87 @@
                 <div class="about__clients">
                     <div class="section__header fade-in-up">
                         <h3 class="about__clients-title">Trusted by Industry Leaders</h3>
-                        <p class="about__clients-subtitle">Proud partners in digital transformation</p>
+                        <p class="about__clients-subtitle">Delivering exceptional results for forward-thinking companies</p>
                     </div>
 
-                    <div class="about__clients-carousel">
-                        <div class="about__clients-track">
-                            <div class="about__client-logo">
-                                <div class="about__client-placeholder">
-                                    <span class="about__client-name">TechCorp</span>
-                                </div>
+                    <div class="about__clients-stats">
+                        <div class="client-stat">
+                            <span class="client-stat-number">150+</span>
+                            <span class="client-stat-label">Happy Clients</span>
+                        </div>
+                        <div class="client-stat">
+                            <span class="client-stat-number">98%</span>
+                            <span class="client-stat-label">Success Rate</span>
+                        </div>
+                        <div class="client-stat">
+                            <span class="client-stat-number">24/7</span>
+                            <span class="client-stat-label">Support</span>
+                        </div>
+                        <div class="client-stat">
+                            <span class="client-stat-number">5+</span>
+                            <span class="client-stat-label">Years Experience</span>
+                        </div>
+                    </div>
+
+                    <div class="about__clients-grid">
+                        <div class="client-card">
+                            <div class="client-logo-wrapper">
+                                <div class="client-logo-placeholder">TC</div>
                             </div>
-                            <div class="about__client-logo">
-                                <div class="about__client-placeholder">
-                                    <span class="about__client-name">InnovateCo</span>
-                                </div>
+                            <div class="client-info">
+                                <h4 class="client-name">TechCorp Solutions</h4>
+                                <p class="client-industry">Enterprise Software</p>
+                                <p class="client-result">300% ROI Increase</p>
                             </div>
-                            <div class="about__client-logo">
-                                <div class="about__client-placeholder">
-                                    <span class="about__client-name">FutureSpace</span>
-                                </div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo-wrapper">
+                                <div class="client-logo-placeholder">IC</div>
                             </div>
-                            <div class="about__client-logo">
-                                <div class="about__client-placeholder">
-                                    <span class="about__client-name">DataFlow</span>
-                                </div>
+                            <div class="client-info">
+                                <h4 class="client-name">InnovateCo Labs</h4>
+                                <p class="client-industry">AI & Machine Learning</p>
+                                <p class="client-result">50% Time Saved</p>
                             </div>
-                            <div class="about__client-logo">
-                                <div class="about__client-placeholder">
-                                    <span class="about__client-name">CloudSync</span>
-                                </div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo-wrapper">
+                                <div class="client-logo-placeholder">FS</div>
                             </div>
-                            <div class="about__client-logo">
-                                <div class="about__client-placeholder">
-                                    <span class="about__client-name">NextGen</span>
-                                </div>
+                            <div class="client-info">
+                                <h4 class="client-name">FutureSpace</h4>
+                                <p class="client-industry">Aerospace Technology</p>
+                                <p class="client-result">40% Cost Reduction</p>
                             </div>
-                            <!-- Duplicate for seamless loop -->
-                            <div class="about__client-logo">
-                                <div class="about__client-placeholder">
-                                    <span class="about__client-name">TechCorp</span>
-                                </div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo-wrapper">
+                                <div class="client-logo-placeholder">DF</div>
                             </div>
-                            <div class="about__client-logo">
-                                <div class="about__client-placeholder">
-                                    <span class="about__client-name">InnovateCo</span>
-                                </div>
+                            <div class="client-info">
+                                <h4 class="client-name">DataFlow Systems</h4>
+                                <p class="client-industry">Big Data Analytics</p>
+                                <p class="client-result">250% Performance Boost</p>
+                            </div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo-wrapper">
+                                <div class="client-logo-placeholder">CS</div>
+                            </div>
+                            <div class="client-info">
+                                <h4 class="client-name">CloudSync Pro</h4>
+                                <p class="client-industry">Cloud Infrastructure</p>
+                                <p class="client-result">99.9% Uptime</p>
+                            </div>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-logo-wrapper">
+                                <div class="client-logo-placeholder">NG</div>
+                            </div>
+                            <div class="client-info">
+                                <h4 class="client-name">NextGen Digital</h4>
+                                <p class="client-industry">Digital Transformation</p>
+                                <p class="client-result">80% Automation</p>
                             </div>
                         </div>
                     </div>
@@ -1671,7 +1719,7 @@
             <div class="container">
                 <div class="section__header fade-in-up">
                     <h2 class="section__title text-reveal">Let's Create Something Amazing</h2>
-                    <p class="section__subtitle fade-in-up stagger-1">Ready to transform your digital presence? We're here to make it happen.</p>
+                    <p class="section__subtitle fade-in-up stagger-1">Ready to transform your digital presence?</p>
                     <div class="contact__urgency fade-in-up stagger-2">
                         <span class="contact__urgency-text">🔥 <strong>Limited Time:</strong> Free strategy session for the first 10 new clients this month!</span>
                     </div>
@@ -1683,7 +1731,7 @@
                         <div class="contact__info">
                             <h3 class="contact__info-title">Multiple Ways to Connect</h3>
                             <p class="contact__info-text">
-                                Choose your preferred way to start the conversation. We're here to help you achieve your goals.
+                                Choose your preferred way to start the conversation.
                             </p>
 
                             <!-- Contact Methods -->
@@ -1784,7 +1832,7 @@
                             <!-- Newsletter Signup -->
                             <div class="contact__newsletter">
                                 <h4 class="contact__newsletter-title">Stay Updated</h4>
-                                <p class="contact__newsletter-text">Get weekly insights, tips, and exclusive resources.</p>
+                                <p class="contact__newsletter-text">Weekly insights, tips, and resources.</p>
                                 <form class="contact__newsletter-form">
                                     <div class="contact__newsletter-input-group">
                                         <input type="email" class="contact__newsletter-input" placeholder="Enter your email" required>
@@ -1827,7 +1875,7 @@
                     <div class="contact__form-panel">
                         <div class="contact__form-header">
                             <h3 class="contact__form-title">Start Your Project</h3>
-                            <p class="contact__form-subtitle">Tell us about your vision and let's make it reality</p>
+                            <p class="contact__form-subtitle">Tell us about your vision</p>
                             <div class="contact__form-progress">
                                 <div class="contact__progress-bar">
                                     <div class="contact__progress-fill" id="formProgress"></div>
@@ -1839,7 +1887,7 @@
                         <form class="contact__form" id="contactForm" novalidate>
                             <!-- Step 1: Basic Information -->
                             <div class="form__step form__step--active" data-step="1">
-                                <h4 class="form__step-title">Let's start with the basics</h4>
+                                <h4 class="form__step-title">Start with the basics</h4>
 
                                 <div class="form__group">
                                     <label for="name" class="form__label">Full Name *</label>
@@ -1886,7 +1934,7 @@
 
                             <!-- Step 2: Company Information -->
                             <div class="form__step" data-step="2">
-                                <h4 class="form__step-title">Tell us about your company</h4>
+                                <h4 class="form__step-title">About your company</h4>
 
                                 <div class="form__group">
                                     <label for="company" class="form__label">Company Name *</label>
@@ -1943,7 +1991,7 @@
 
                             <!-- Step 3: Service Selection -->
                             <div class="form__step" data-step="3">
-                                <h4 class="form__step-title">What services are you interested in?</h4>
+                                <h4 class="form__step-title">Services you need</h4>
                                 <p class="form__step-subtitle">Select all that apply</p>
 
                                 <div class="form__checkboxes">
@@ -2195,7 +2243,7 @@
                                 </svg>
                             </div>
                             <h3 class="contact__success-title">Message Sent Successfully! 🎉</h3>
-                            <p class="contact__success-text">Thank you for reaching out! We'll get back to you within 2 hours during business hours.</p>
+                            <p class="contact__success-text">Thank you! We'll get back to you within 2 hours.</p>
                             <button class="btn btn--secondary contact__success-btn" onclick="location.reload()">Send Another Message</button>
                         </div>
                     </div>
@@ -2210,7 +2258,7 @@
             <div class="footer__content">
                 <div class="footer__brand">
                     <h3 class="footer__logo">T9 Digital</h3>
-                    <p class="footer__tagline">Crafting digital excellence since 2020</p>
+                    <p class="footer__tagline">Digital excellence since 2020</p>
                 </div>
 
                 <div class="footer__links">
