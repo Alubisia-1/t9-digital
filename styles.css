@@ -555,30 +555,127 @@ p {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
+  .nav {
+    position: relative;
+  }
+
   .nav__menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
     background: white;
     flex-direction: column;
-    box-shadow: var(--shadow);
-    padding: 1rem;
+    padding: 5rem 0 2rem 0;
     gap: 0;
+    box-shadow: -2px 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
   }
 
   .nav__menu.active {
+    right: 0;
     display: flex;
   }
 
   .nav__toggle {
     display: block;
+    position: relative;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    z-index: 1002;
+  }
+
+  .nav__toggle:hover {
+    background-color: #f0f0f0;
+  }
+
+  .nav__toggle[aria-expanded="true"] {
+    color: var(--primary-color);
+    background-color: #f8f9fa;
+  }
+
+  .nav__menu li {
+    margin: 0;
+    border-bottom: 1px solid rgba(240, 240, 240, 0.8);
+  }
+
+  .nav__menu li:first-child {
+    border-top: 1px solid rgba(240, 240, 240, 0.8);
+  }
+
+  .nav__menu li:last-child {
+    border-bottom: none;
   }
 
   .nav__link {
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 2rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    border-bottom: none;
+    transition: all 0.3s ease;
+    position: relative;
+    background: transparent;
+  }
+
+  .nav__link::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    transition: width 0.3s ease;
+  }
+
+  .nav__link:hover {
+    color: var(--primary-color);
+    background-color: rgba(244, 143, 177, 0.05);
+    padding-right: 2.5rem;
+  }
+
+  .nav__link:hover::before {
+    width: 4px;
+  }
+
+  .nav__link.active {
+    color: var(--primary-color);
+    background-color: rgba(244, 143, 177, 0.1);
+    font-weight: 600;
+    padding-right: 2.5rem;
+  }
+
+  .nav__link.active::before {
+    width: 4px;
+  }
+
+  /* Backdrop is now handled by JavaScript for better click detection */
+
+  /* Style the hamburger menu */
+  .nav__toggle {
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+  }
+
+  .nav__toggle[aria-expanded="false"]::before {
+    content: '☰';
+  }
+
+  .nav__toggle[aria-expanded="true"]::before {
+    content: '✕';
   }
 
   .hero__title {

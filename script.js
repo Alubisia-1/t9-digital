@@ -18,10 +18,11 @@ const initMobileNavigation = () => {
     );
   });
 
-  // Close menu when clicking on links
+  // Close menu when clicking on links (but allow navigation)
   const navLinks = $$('.nav__link');
   navLinks.forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+      // Don't prevent default - allow normal link navigation
       navMenu.classList.remove('active');
       navToggle.setAttribute('aria-expanded', 'false');
     });
