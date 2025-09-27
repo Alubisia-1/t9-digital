@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-09-24T07:04:17.784Z",
-  "version": "1758697457386",
+  "timestamp": "2025-09-27T06:41:08.036Z",
+  "version": "1758955267981",
   "environment": "production",
   "files": {
-    "index.html": 84524,
-    "styles.min.css": 125929,
-    "script.min.js": 110532
+    "index.html": 13047,
+    "styles.min.css": 10574,
+    "script.min.js": 8261
   },
   "optimizations": {
     "minified": true,
